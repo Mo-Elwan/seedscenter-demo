@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مركز البذور والتقاوي - نظام المعشبة | تفاصيل العينة</title>
+    
+    <!-- Google Fonts: Tajawal & IBM Plex Sans Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Tajawal:wght@500;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    
+    <!-- Naama Platform Styles -->
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+    <!-- Platform Header -->
+    <header class="naama-navbar">
+        <div class="naama-nav-container">
+            <div class="naama-brand-group">
+                <a href="index.html" class="naama-brand-link">
+                    <img src="images/naama-logo.png" alt="منصة نما" class="naama-logo" />
+                    <div class="naama-brand-text">
+                        <span class="naama-title-large">مركز البذور والتقاوي</span>
+                        <div class="system-name-tag">
+                            <i class="fa-solid fa-leaf"></i>
+                            <span>نظام المعشبة الرقمي</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="naama-nav-menu">
+                <a href="index.html" class="naama-nav-link">
+                    <i class="fa-solid fa-table-list"></i> سجل العينات
+                </a>
+                <a href="detail.html?shelf=H68(1)2" class="naama-btn-services">
+                    <i class="fa-solid fa-microscope"></i> العارض التفاعلي
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header & Breadcrumbs -->
+    <div class="naama-page-header">
+        <div class="header-breadcrumbs">
+            <a href="index.html">الرئيسية</a>
+            <i class="fa-solid fa-chevron-left breadcrumb-separator"></i>
+            <span>مركز البذور والتقاوي</span>
+            <i class="fa-solid fa-chevron-left breadcrumb-separator"></i>
+            <a href="index.html">السجل الشامل</a>
+            <i class="fa-solid fa-chevron-left breadcrumb-separator"></i>
+            <span class="active" id="breadcrumbShelf">عينة: H68(1)2</span>
+        </div>
+
+        <div class="header-title-row">
+            <div>
+                <h2 class="naama-page-title" id="pageTitleShelf">تفاصيل العينة: H68(1)2</h2>
+                <p class="naama-page-subtitle latin-name" id="pageSubtitleName">Crinum album (Forssk.) Herb</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="main-container main-content-body">
+        <div class="detail-container">
+            <!-- Back Link Button -->
+            <div style="margin-bottom: 22px;">
+                <a href="index.html" class="btn btn-secondary">
+                    <i class="fa-solid fa-arrow-right"></i>
+                    العودة إلى سجل العينات
+                </a>
+            </div>
+
+            <div class="detail-grid">
+                <!-- Right Side (First in RTL): Specimen Info Table -->
+                <div class="info-section">
+                    <div class="specimen-card">
+                        <h3 class="specimen-title">
+                            <i class="fa-solid fa-clipboard-check"></i>
+                            <span>بيانات العينة المعشبية</span>
+                        </h3>
+
+                        <table class="specimen-table">
+                            <tr>
+                                <th><i class="fa-solid fa-barcode"></i> رقم الباركود:</th>
+                                <td><strong id="valBarcode">1</strong></td>
+                            </tr>
+                            <tr>
+                                <th><i class="fa-solid fa-hashtag"></i> كود الرف:</th>
+                                <td><span class="badge-code" id="valShelf">H68(1)2</span></td>
+                            </tr>
+                            <tr>
+                                <th><i class="fa-solid fa-cubes"></i> رقم الحامل (Rack):</th>
+                                <td id="valRack">H</td>
+                            </tr>
+                            <tr>
+                                <th><i class="fa-solid fa-seedling"></i> الاسم العلمي:</th>
+                                <td class="latin-name-highlight" id="valName">Crinum album (Forssk.) Herb</td>
+                            </tr>
+                            <tr>
+                                <th><i class="fa-solid fa-users"></i> العائلة (Family):</th>
+                                <td id="valFamily">Amaryllidaceae Juss.</td>
+                            </tr>
+                            <tr>
+                                <th><i class="fa-solid fa-leaf"></i> الجنس (Genus):</th>
+                                <td id="valGenus">Crinum</td>
+                            </tr>
+                            <tr>
+                                <th><i class="fa-solid fa-tree"></i> النوع (Species):</th>
+                                <td id="valSpecies">album</td>
+                            </tr>
+                            <tr id="rowSubspecies">
+                                <th><i class="fa-solid fa-layer-group"></i> تحت النوع:</th>
+                                <td id="valSubspecies">—</td>
+                            </tr>
+                            <tr id="rowAuthors">
+                                <th><i class="fa-solid fa-user-graduate"></i> المؤلفون:</th>
+                                <td id="valAuthors">(Forssk.) Herb</td>
+                            </tr>
+                            <tr>
+                                <th><i class="fa-solid fa-map-location-dot"></i> الموقع الأول:</th>
+                                <td id="valLocation1">Raidah - Raidah</td>
+                            </tr>
+                            <tr id="rowLocation2">
+                                <th><i class="fa-solid fa-map-pin"></i> الموقع الثاني:</th>
+                                <td id="valLocation2">—</td>
+                            </tr>
+                            <tr>
+                                <th><i class="fa-solid fa-user"></i> اسم الجامع:</th>
+                                <td id="valCollector">Chaudhary, S.A.</td>
+                            </tr>
+                            <tr id="rowCollNumber">
+                                <th><i class="fa-solid fa-tag"></i> رقم الجمع (Coll No):</th>
+                                <td id="valCollNumber">14170-RIY</td>
+                            </tr>
+                            <tr>
+                                <th><i class="fa-regular fa-calendar-days"></i> تاريخ الجمع:</th>
+                                <td id="valDate">6/26/1988</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Left Side (Second in RTL): Multi-Image Gallery with Interactive Herbarium Viewer -->
+                <div class="gallery-section">
+                    <div class="viewer-card">
+                        <!-- Interactive Inspection Toolbar -->
+                        <div class="viewer-toolbar">
+                            <div class="toolbar-group">
+                                <button type="button" class="toolbar-btn" id="btnZoomIn" title="تكبير (Zoom In)">
+                                    <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                </button>
+                                <span class="zoom-level-badge" id="zoomLevelDisplay">100%</span>
+                                <button type="button" class="toolbar-btn" id="btnZoomOut" title="تصغير (Zoom Out)">
+                                    <i class="fa-solid fa-magnifying-glass-minus"></i>
+                                </button>
+                            </div>
+
+                            <div class="toolbar-divider"></div>
+
+                            <div class="toolbar-group">
+                                <button type="button" class="toolbar-btn" id="btnRotateRight" title="تدوير لليمين 90°">
+                                    <i class="fa-solid fa-rotate-right"></i>
+                                </button>
+                                <button type="button" class="toolbar-btn" id="btnRotateLeft" title="تدوير لليسار 90°">
+                                    <i class="fa-solid fa-rotate-left"></i>
+                                </button>
+                                <button type="button" class="toolbar-btn" id="btnFlipH" title="قلب أفقي">
+                                    <i class="fa-solid fa-arrows-left-right"></i>
+                                </button>
+                            </div>
+
+                            <div class="toolbar-divider"></div>
+
+                            <div class="toolbar-group">
+                                <button type="button" class="toolbar-btn" id="btnInvert" title="عكس الألوان (فحص عروق وشعيرات النبات)">
+                                    <i class="fa-solid fa-circle-half-stroke"></i>
+                                </button>
+                                <button type="button" class="toolbar-btn" id="btnReset" title="إعادة الضبط للوضع الافتراضي">
+                                    <i class="fa-solid fa-arrows-rotate"></i>
+                                </button>
+                                <button type="button" class="toolbar-btn" id="btnFullscreen" title="عرض بملء الشاشة">
+                                    <i class="fa-solid fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Main Interactive Image Viewport -->
+                        <div class="main-image-wrapper" id="imageViewport">
+                            <img id="mainDisplayImage" 
+                                 src="images/specimens/H68(1)2.jpg" 
+                                 alt="عينة نباتية" 
+                                 class="main-specimen-img interactive-img" 
+                                 draggable="false" />
+
+                            <!-- Quick Hint Overlay -->
+                            <div class="viewer-hint">
+                                <i class="fa-solid fa-mouse"></i> استخدم عجلة الماوس للزووم، واسحب بالماوس للتحريك
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Multiple Images Thumbnails Strip -->
+                    <div class="thumbnails-strip-title">
+                        <i class="fa-solid fa-images"></i>
+                        <span>الصور المتوفرة للعينات - انقر للتبديل السريع والمعاينة:</span>
+                    </div>
+                    <div class="thumbnails-strip" id="thumbnailsStrip">
+                        <div class="thumb-item active" onclick="switchImage('images/specimens/H68(1)2.jpg', this)">
+                            <img src="images/specimens/H68(1)2.jpg" alt="عينة 1" />
+                            <span class="thumb-badge">1</span>
+                        </div>
+                        <div class="thumb-item" onclick="switchImage('images/specimens/H100(1)2.jpg', this)">
+                            <img src="images/specimens/H100(1)2.jpg" alt="عينة 2" />
+                            <span class="thumb-badge">2</span>
+                        </div>
+                    </div>
+
+                    <div class="image-actions">
+                        <a id="btnDownloadOriginal" 
+                           href="images/specimens/H68(1)2.jpg" 
+                           target="_blank" 
+                           class="btn btn-primary" 
+                           style="width: 100%;">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            فتح الصورة في نافذة منفصلة بالدقة الكاملة
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Platform Footer -->
+    <footer class="naama-footer">
+        <div class="naama-footer-container">
+            <div class="footer-col-right">
+                <div class="footer-title">مركز البذور والتقاوي - نظام المعشبة الرقمي</div>
+                <div class="footer-subtitle">منصة نما - وزارة البيئة والمياه والزراعة © 2026</div>
+            </div>
+            <div class="footer-col-left">
+                <span class="system-version-tag"><i class="fa-solid fa-code-branch"></i> نسخة العرض السريع (GitHub Demo)</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Load Sample Data & Interactive Viewer Logic -->
+    <script src="js/plants-data.js"></script>
+    <script>
+        // Read URL param: ?shelf=...
+        const urlParams = new URLSearchParams(window.location.search);
+        const requestedShelf = urlParams.get('shelf') || 'H68(1)2';
+
+        const allData = window.PLANTS_DATA || [];
+        const currentPlant = allData.find(p => p.Shelf === requestedShelf) || allData[0] || {};
+
+        // Bind Data
+        if (currentPlant) {
+            const shelfStr = currentPlant.Shelf || '—';
+            const nameStr = currentPlant.Name || '—';
+            document.title = `تفاصيل العينة ${shelfStr} - ${nameStr} | مركز البذور والتقاوي`;
+            document.getElementById('breadcrumbShelf').textContent = `عينة: ${shelfStr}`;
+            document.getElementById('pageTitleShelf').textContent = `تفاصيل العينة: ${shelfStr}`;
+            document.getElementById('pageSubtitleName').textContent = nameStr;
+
+            document.getElementById('valBarcode').textContent = currentPlant.Barcode || '—';
+            document.getElementById('valShelf').textContent = shelfStr;
+            document.getElementById('valRack').textContent = currentPlant.Rack || '—';
+            document.getElementById('valName').textContent = nameStr;
+            document.getElementById('valFamily').textContent = currentPlant.Family || '—';
+            document.getElementById('valGenus').textContent = currentPlant.Genus || '—';
+            document.getElementById('valSpecies').textContent = currentPlant.Species || '—';
+            document.getElementById('valSubspecies').textContent = currentPlant.Subspecies || '—';
+            document.getElementById('valAuthors').textContent = currentPlant.Authors || '—';
+            document.getElementById('valLocation1').textContent = currentPlant.Location1 || '—';
+            document.getElementById('valLocation2').textContent = currentPlant.Location2 || '—';
+            document.getElementById('valCollector').textContent = currentPlant.Collector || '—';
+            document.getElementById('valCollNumber').textContent = currentPlant.CollNumber || '—';
+            document.getElementById('valDate').textContent = currentPlant.Date || '—';
+
+            // Select image based on plant
+            if (shelfStr.includes('H100')) {
+                switchImage('images/specimens/H100(1)2.jpg', document.querySelectorAll('.thumb-item')[1]);
+            }
+        }
+
+        // ==========================================
+        // Interactive Herbarium Specimen Viewer
+        // ==========================================
+        let currentScale = 1.0;
+        let currentRotation = 0;
+        let flipH = 1;
+        let isInverted = false;
+        let translateX = 0;
+        let translateY = 0;
+        let isDragging = false;
+        let startX = 0;
+        let startY = 0;
+
+        const img = document.getElementById('mainDisplayImage');
+        const viewport = document.getElementById('imageViewport');
+        const zoomBadge = document.getElementById('zoomLevelDisplay');
+        const viewerCard = document.querySelector('.viewer-card');
+        const btnOrig = document.getElementById('btnDownloadOriginal');
+
+        function applyTransforms() {
+            if (!img) return;
+            img.style.transform = `translate(${translateX}px, ${translateY}px) rotate(${currentRotation}deg) scale(${currentScale * flipH}, ${currentScale})`;
+            img.style.filter = isInverted ? 'invert(1) contrast(1.15) brightness(1.1)' : 'none';
+            if (zoomBadge) {
+                zoomBadge.textContent = `${Math.round(currentScale * 100)}%`;
+            }
+        }
+
+        function resetView() {
+            currentScale = 1.0;
+            currentRotation = 0;
+            flipH = 1;
+            isInverted = false;
+            translateX = 0;
+            translateY = 0;
+            applyTransforms();
+        }
+
+        function zoomIn() {
+            if (currentScale < 8.0) {
+                currentScale = Math.min(8.0, Number((currentScale * 1.25).toFixed(2)));
+                applyTransforms();
+            }
+        }
+
+        function zoomOut() {
+            if (currentScale > 0.4) {
+                currentScale = Math.max(0.4, Number((currentScale / 1.25).toFixed(2)));
+                applyTransforms();
+            }
+        }
+
+        function rotateRight() {
+            currentRotation = (currentRotation + 90) % 360;
+            applyTransforms();
+        }
+
+        function rotateLeft() {
+            currentRotation = (currentRotation - 90) % 360;
+            applyTransforms();
+        }
+
+        function toggleFlipH() {
+            flipH = flipH === 1 ? -1 : 1;
+            applyTransforms();
+        }
+
+        function toggleInvert() {
+            isInverted = !isInverted;
+            applyTransforms();
+        }
+
+        function toggleFullscreen() {
+            const target = viewerCard || viewport;
+            if (!document.fullscreenElement) {
+                if (target.requestFullscreen) {
+                    target.requestFullscreen();
+                } else if (target.webkitRequestFullscreen) {
+                    target.webkitRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        }
+
+        // Event listeners
+        document.getElementById('btnZoomIn')?.addEventListener('click', zoomIn);
+        document.getElementById('btnZoomOut')?.addEventListener('click', zoomOut);
+        document.getElementById('btnRotateRight')?.addEventListener('click', rotateRight);
+        document.getElementById('btnRotateLeft')?.addEventListener('click', rotateLeft);
+        document.getElementById('btnFlipH')?.addEventListener('click', toggleFlipH);
+        document.getElementById('btnInvert')?.addEventListener('click', toggleInvert);
+        document.getElementById('btnReset')?.addEventListener('click', resetView);
+        document.getElementById('btnFullscreen')?.addEventListener('click', toggleFullscreen);
+
+        // Wheel Zoom
+        if (viewport) {
+            viewport.addEventListener('wheel', function (e) {
+                e.preventDefault();
+                const delta = e.deltaY > 0 ? 0.85 : 1.15;
+                const newScale = currentScale * delta;
+                if (newScale >= 0.4 && newScale <= 8.0) {
+                    currentScale = Number(newScale.toFixed(2));
+                    applyTransforms();
+                }
+            }, { passive: false });
+
+            // Drag / Pan
+            viewport.addEventListener('mousedown', function (e) {
+                if (e.button !== 0) return;
+                isDragging = true;
+                startX = e.clientX - translateX;
+                startY = e.clientY - translateY;
+                viewport.style.cursor = 'grabbing';
+            });
+
+            window.addEventListener('mousemove', function (e) {
+                if (!isDragging) return;
+                translateX = e.clientX - startX;
+                translateY = e.clientY - startY;
+                applyTransforms();
+            });
+
+            window.addEventListener('mouseup', function () {
+                if (isDragging) {
+                    isDragging = false;
+                    if (viewport) viewport.style.cursor = 'grab';
+                }
+            });
+
+            // Double Click
+            viewport.addEventListener('dblclick', function () {
+                if (currentScale > 1.05) {
+                    resetView();
+                } else {
+                    currentScale = 2.0;
+                    applyTransforms();
+                }
+            });
+        }
+
+        // Switch Image
+        window.switchImage = function(imageUrl, element) {
+            if (img) {
+                img.src = imageUrl;
+                resetView();
+            }
+            if (btnOrig) {
+                btnOrig.href = imageUrl;
+            }
+
+            document.querySelectorAll('.thumb-item').forEach(el => el.classList.remove('active'));
+            if (element) {
+                element.classList.add('active');
+            }
+        };
+    </script>
+</body>
+</html>

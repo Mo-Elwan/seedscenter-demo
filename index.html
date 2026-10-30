@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مركز البذور والتقاوي - نظام المعشبة | السجل الشامل</title>
+    
+    <!-- Google Fonts: Tajawal & IBM Plex Sans Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Tajawal:wght@500;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    
+    <!-- Naama Platform Styles -->
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+    <!-- Platform Header -->
+    <header class="naama-navbar">
+        <div class="naama-nav-container">
+            <div class="naama-brand-group">
+                <a href="index.html" class="naama-brand-link">
+                    <img src="images/naama-logo.png" alt="منصة نما" class="naama-logo" />
+                    <div class="naama-brand-text">
+                        <span class="naama-title-large">مركز البذور والتقاوي</span>
+                        <div class="system-name-tag">
+                            <i class="fa-solid fa-leaf"></i>
+                            <span>نظام المعشبة الرقمي</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="naama-nav-menu">
+                <a href="index.html" class="naama-nav-link active">
+                    <i class="fa-solid fa-table-list"></i> سجل العينات
+                </a>
+                <a href="detail.html?shelf=H68(1)2" class="naama-btn-services">
+                    <i class="fa-solid fa-microscope"></i> العارض التفاعلي
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header & Breadcrumbs -->
+    <div class="naama-page-header">
+        <div class="header-breadcrumbs">
+            <a href="index.html">الرئيسية</a>
+            <i class="fa-solid fa-chevron-left breadcrumb-separator"></i>
+            <span>مركز البذور والتقاوي</span>
+            <i class="fa-solid fa-chevron-left breadcrumb-separator"></i>
+            <span class="active">السجل الشامل للعينات النباتية</span>
+        </div>
+
+        <div class="header-title-row">
+            <div>
+                <h2 class="naama-page-title">السجل الشامل للعينات النباتية</h2>
+                <p class="naama-page-subtitle">قاعدة بيانات الفحص الميداني والمعشبي للبذور والعينات المحفوظة</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="main-container main-content-body">
+        <!-- Filter Card -->
+        <div class="filter-card">
+            <div class="filter-header">
+                <div class="filter-title-box">
+                    <i class="fa-solid fa-sliders"></i>
+                    <span>البحث وتصفية العينات</span>
+                </div>
+                <div class="filter-actions-top">
+                    <button type="button" class="btn btn-secondary btn-sm" id="btnResetFilters">
+                        <i class="fa-solid fa-rotate-left"></i> تفريغ الحقول
+                    </button>
+                </div>
+            </div>
+
+            <form id="filterForm">
+                <div class="filter-grid">
+                    <div class="form-group form-group-full">
+                        <label class="form-label">
+                            <i class="fa-solid fa-magnifying-glass"></i> البحث الشامل (بالاسم العلمي، كود الرف، الباركود، العائلة، الموقع):
+                        </label>
+                        <input type="text" id="searchInput" class="form-control" placeholder="اكتب للبحث الفوري..." autocomplete="off" />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label"><i class="fa-solid fa-users"></i> العائلة (Family):</label>
+                        <select id="familySelect" class="form-select">
+                            <option value="">جميع العائلات</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label"><i class="fa-solid fa-leaf"></i> الجنس (Genus):</label>
+                        <select id="genusSelect" class="form-select">
+                            <option value="">جميع الأجناس</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label"><i class="fa-solid fa-user"></i> اسم الجامع:</label>
+                        <select id="collectorSelect" class="form-select">
+                            <option value="">جميع الجوامع</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label"><i class="fa-solid fa-map-pin"></i> الموقع:</label>
+                        <select id="locationSelect" class="form-select">
+                            <option value="">جميع المواقع</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Table Toolbar -->
+        <div class="table-toolbar">
+            <div class="table-results-info">
+                <i class="fa-solid fa-database"></i>
+                <span>عرض النتائج: </span>
+                <span class="results-badge" id="resultsCount">0 عينة</span>
+            </div>
+
+            <div class="page-size-selector">
+                <label for="pageSizeSelect"><i class="fa-solid fa-list-ol"></i> عدد الصفوف بالصفحة:</label>
+                <select id="pageSizeSelect" class="form-select form-select-sm">
+                    <option value="10" selected>10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Data Table Card -->
+        <div class="data-table-card">
+            <div class="table-responsive">
+                <table class="naama-table" id="plantsTable">
+                    <thead>
+                        <tr>
+                            <th>كود الرف</th>
+                            <th>الباركود</th>
+                            <th>الاسم العلمي (Scientific Name)</th>
+                            <th>العائلة (Family)</th>
+                            <th>الجنس (Genus)</th>
+                            <th>النوع (Species)</th>
+                            <th>اسم الجامع</th>
+                            <th>الموقع</th>
+                            <th>تاريخ الجمع</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <!-- Populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination Bar -->
+            <div class="pagination-bar" id="paginationBar">
+                <button type="button" class="page-link" id="btnPrevPage">
+                    <i class="fa-solid fa-chevron-right"></i> السابق
+                </button>
+                <div class="page-numbers" id="pageNumbers"></div>
+                <button type="button" class="page-link" id="btnNextPage">
+                    التالي <i class="fa-solid fa-chevron-left"></i>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Platform Footer -->
+    <footer class="naama-footer">
+        <div class="naama-footer-container">
+            <div class="footer-col-right">
+                <div class="footer-title">مركز البذور والتقاوي - نظام المعشبة الرقمي</div>
+                <div class="footer-subtitle">منصة نما - وزارة البيئة والمياه والزراعة © 2026</div>
+            </div>
+            <div class="footer-col-left">
+                <span class="system-version-tag"><i class="fa-solid fa-code-branch"></i> نسخة العرض السريع (GitHub Demo)</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Load Sample Data & App Logic -->
+    <script src="js/plants-data.js"></script>
+    <script>
+        // State
+        let allData = window.PLANTS_DATA || [];
+        let filteredData = [...allData];
+        let currentPage = 1;
+        let pageSize = 10;
+
+        // Elements
+        const searchInput = document.getElementById('searchInput');
+        const familySelect = document.getElementById('familySelect');
+        const genusSelect = document.getElementById('genusSelect');
+        const collectorSelect = document.getElementById('collectorSelect');
+        const locationSelect = document.getElementById('locationSelect');
+        const pageSizeSelect = document.getElementById('pageSizeSelect');
+        const tableBody = document.getElementById('tableBody');
+        const resultsCount = document.getElementById('resultsCount');
+        const btnResetFilters = document.getElementById('btnResetFilters');
+        const btnPrevPage = document.getElementById('btnPrevPage');
+        const btnNextPage = document.getElementById('btnNextPage');
+        const pageNumbers = document.getElementById('pageNumbers');
+
+        // Populate Dropdowns
+        function populateDropdown(selectEl, values) {
+            const sorted = [...new Set(values.filter(v => v && v.trim() !== ''))].sort();
+            sorted.forEach(v => {
+                const opt = document.createElement('option');
+                opt.value = v;
+                opt.textContent = v;
+                selectEl.appendChild(opt);
+            });
+        }
+
+        populateDropdown(familySelect, allData.map(d => d.Family));
+        populateDropdown(genusSelect, allData.map(d => d.Genus));
+        populateDropdown(collectorSelect, allData.map(d => d.Collector));
+        populateDropdown(locationSelect, allData.map(d => d.Location1));
+
+        // Filtering
+        function applyFilters() {
+            const q = searchInput.value.trim().toLowerCase();
+            const f = familySelect.value;
+            const g = genusSelect.value;
+            const c = collectorSelect.value;
+            const l = locationSelect.value;
+
+            filteredData = allData.filter(item => {
+                if (f && item.Family !== f) return false;
+                if (g && item.Genus !== g) return false;
+                if (c && item.Collector !== c) return false;
+                if (l && item.Location1 !== l) return false;
+
+                if (q) {
+                    const matchName = item.Name && item.Name.toLowerCase().includes(q);
+                    const matchShelf = item.Shelf && item.Shelf.toLowerCase().includes(q);
+                    const matchBarcode = item.Barcode && item.Barcode.toString().includes(q);
+                    const matchFamily = item.Family && item.Family.toLowerCase().includes(q);
+                    const matchLoc = item.Location1 && item.Location1.toLowerCase().includes(q);
+                    if (!matchName && !matchShelf && !matchBarcode && !matchFamily && !matchLoc) return false;
+                }
+                return true;
+            });
+
+            currentPage = 1;
+            renderTable();
+        }
+
+        // Render Table
+        function renderTable() {
+            resultsCount.textContent = `${filteredData.length} عينة`;
+
+            const totalPages = Math.ceil(filteredData.length / pageSize) || 1;
+            if (currentPage > totalPages) currentPage = totalPages;
+
+            const startIndex = (currentPage - 1) * pageSize;
+            const pageItems = filteredData.slice(startIndex, startIndex + pageSize);
+
+            if (pageItems.length === 0) {
+                tableBody.innerHTML = `<tr><td colspan="9" class="no-data-cell">لا توجد عينات تطابق خيارات البحث الحالية</td></tr>`;
+            } else {
+                tableBody.innerHTML = pageItems.map(p => `
+                    <tr>
+                        <td>
+                            <a href="detail.html?shelf=${encodeURIComponent(p.Shelf)}" class="badge-code badge-code-link" title="عرض تفاصيل العينة وفحص الصور">
+                                <i class="fa-solid fa-arrow-up-left-from-circle"></i> ${escapeHtml(p.Shelf || '—')}
+                            </a>
+                        </td>
+                        <td><strong>${p.Barcode}</strong></td>
+                        <td class="latin-name-cell">
+                            <span class="latin-name-highlight">${escapeHtml(p.Name || '—')}</span>
+                        </td>
+                        <td>${escapeHtml(p.Family || '—')}</td>
+                        <td>${escapeHtml(p.Genus || '—')}</td>
+                        <td>${escapeHtml(p.Species || '—')}</td>
+                        <td>${escapeHtml(p.Collector || '—')}</td>
+                        <td>${escapeHtml(p.Location1 || '—')}</td>
+                        <td>${escapeHtml(p.Date || '—')}</td>
+                    </tr>
+                `).join('');
+            }
+
+            renderPagination(totalPages);
+        }
+
+        // Render Pagination
+        function renderPagination(totalPages) {
+            btnPrevPage.disabled = currentPage <= 1;
+            btnNextPage.disabled = currentPage >= totalPages;
+
+            let html = '';
+            const maxVisible = 5;
+            let start = Math.max(1, currentPage - 2);
+            let end = Math.min(totalPages, start + maxVisible - 1);
+
+            if (end - start < maxVisible - 1) {
+                start = Math.max(1, end - maxVisible + 1);
+            }
+
+            for (let i = start; i <= end; i++) {
+                html += `<button type="button" class="page-link ${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>`;
+            }
+
+            pageNumbers.innerHTML = html;
+        }
+
+        window.goToPage = function(page) {
+            currentPage = page;
+            renderTable();
+        };
+
+        btnPrevPage.addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                renderTable();
+            }
+        });
+
+        btnNextPage.addEventListener('click', () => {
+            const totalPages = Math.ceil(filteredData.length / pageSize) || 1;
+            if (currentPage < totalPages) {
+                currentPage++;
+                renderTable();
+            }
+        });
+
+        pageSizeSelect.addEventListener('change', () => {
+            pageSize = parseInt(pageSizeSelect.value, 10);
+            currentPage = 1;
+            renderTable();
+        });
+
+        searchInput.addEventListener('input', applyFilters);
+        familySelect.addEventListener('change', applyFilters);
+        genusSelect.addEventListener('change', applyFilters);
+        collectorSelect.addEventListener('change', applyFilters);
+        locationSelect.addEventListener('change', applyFilters);
+
+        btnResetFilters.addEventListener('click', () => {
+            searchInput.value = '';
+            familySelect.value = '';
+            genusSelect.value = '';
+            collectorSelect.value = '';
+            locationSelect.value = '';
+            applyFilters();
+        });
+
+        function escapeHtml(text) {
+            return String(text).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        }
+
+        // Initial Render
+        renderTable();
+    </script>
+</body>
+</html>
