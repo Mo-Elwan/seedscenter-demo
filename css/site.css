@@ -1,0 +1,1034 @@
+/* ========================================================
+   هوية وتصميم منصة نما (Naama Design System)
+   مركز البذور والتقاوي - نظام المعشبة
+   ======================================================== */
+
+:root {
+    /* Naama Colors */
+    --naama-primary: #176D38;
+    --naama-primary-hover: #11552B;
+    --naama-primary-dark: #0D4121;
+    --naama-mint: #E6F8EF;
+    --naama-mint-border: #A8E6CF;
+    --naama-mint-hover: #D7F3E5;
+    
+    --naama-bg: #F8F9FA;
+    --naama-card-bg: #FFFFFF;
+    --naama-border: #E2E8F0;
+    --naama-border-light: #F1F5F9;
+    
+    --naama-text-main: #1C252C;
+    --naama-text-muted: #64748B;
+    --naama-text-dark: #0F172A;
+    
+    /* Font */
+    --naama-font: 'Tajawal', 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--naama-font);
+    background-color: var(--naama-bg);
+    color: var(--naama-text-main);
+    direction: rtl;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================
+   Naama Top Navbar
+   ========================================== */
+.naama-navbar {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid var(--naama-border);
+    padding: 12px 0;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.03);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.naama-nav-container {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Brand Group: Logo + Center Name + System Name */
+.naama-brand-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.naama-logo-block {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.naama-logo-block img {
+    height: 46px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.naama-logo-block:hover {
+    opacity: 0.9;
+}
+
+/* Naama Iconic Green Emblem */
+.naama-symbol {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, #176D38 0%, #1e8748 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font-size: 1.3rem;
+    box-shadow: 0 3px 8px rgba(23, 109, 56, 0.25);
+}
+
+.naama-letters {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.naama-arabic {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--naama-primary);
+    letter-spacing: 0.5px;
+}
+
+.naama-english {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: var(--naama-primary);
+    letter-spacing: 2px;
+}
+
+.naama-brand-separator {
+    width: 2px;
+    height: 38px;
+    background-color: var(--naama-border);
+}
+
+/* Center Name & System Name */
+.center-identity {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.center-main-title {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: var(--naama-text-dark);
+    line-height: 1.2;
+    letter-spacing: -0.2px;
+}
+
+.system-name-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: var(--naama-mint);
+    border: 1px solid var(--naama-mint-border);
+    color: var(--naama-primary);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 20px;
+    width: fit-content;
+}
+
+.system-name-tag i {
+    font-size: 0.8rem;
+}
+
+/* Nav Menu Items */
+.naama-nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.naama-nav-link {
+    text-decoration: none;
+    color: var(--naama-text-main);
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.naama-nav-link:hover {
+    color: var(--naama-primary);
+    background-color: #F1F5F9;
+}
+
+.naama-btn-services {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--naama-primary);
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.92rem;
+    padding: 9px 18px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(23, 109, 56, 0.2);
+    transition: all 0.2s;
+}
+
+.naama-btn-services:hover {
+    background-color: var(--naama-primary-hover);
+    color: #FFFFFF;
+    box-shadow: 0 4px 10px rgba(23, 109, 56, 0.3);
+}
+
+/* ==========================================
+   Page Header & Breadcrumbs
+   ========================================== */
+.naama-page-header {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid var(--naama-border);
+    padding: 24px 0 20px;
+    margin-bottom: 24px;
+}
+
+.naama-page-header > div,
+.main-container {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.header-breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--naama-text-muted);
+    margin-bottom: 10px;
+}
+
+.header-breadcrumbs a {
+    color: var(--naama-text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.header-breadcrumbs a:hover {
+    color: var(--naama-primary);
+}
+
+.breadcrumb-separator {
+    font-size: 0.65rem;
+    color: #94A3B8;
+}
+
+.header-breadcrumbs .active {
+    color: var(--naama-primary);
+    font-weight: 700;
+}
+
+.naama-page-title {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: var(--naama-text-dark);
+    margin-bottom: 4px;
+}
+
+.naama-page-subtitle {
+    font-size: 0.95rem;
+    color: var(--naama-text-muted);
+}
+
+/* Main Body */
+.main-content-body {
+    flex: 1;
+}
+
+/* ==========================================
+   Filter Card (Naama Clean Card Style)
+   ========================================== */
+.filter-card {
+    background-color: var(--naama-card-bg);
+    border: 1px solid var(--naama-border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--naama-border-light);
+    padding-bottom: 14px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.filter-title-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--naama-primary);
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+.filter-subtitle-note {
+    font-size: 0.85rem;
+    color: var(--naama-text-muted);
+}
+
+.filter-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px 16px;
+    align-items: flex-end;
+}
+
+.filter-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.filter-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--naama-text-dark);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.filter-label i {
+    color: var(--naama-primary);
+    font-size: 0.85rem;
+}
+
+.filter-input,
+.filter-select {
+    height: 42px;
+    padding: 6px 12px;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    font-family: var(--naama-font);
+    font-size: 0.9rem;
+    background-color: #FFFFFF;
+    color: var(--naama-text-main);
+    transition: all 0.2s;
+    width: 100%;
+}
+
+.filter-input:focus,
+.filter-select:focus {
+    outline: none;
+    border-color: var(--naama-primary);
+    box-shadow: 0 0 0 3px rgba(23, 109, 56, 0.15);
+}
+
+.filter-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-family: var(--naama-font);
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    height: 42px;
+}
+
+.btn-primary {
+    background-color: var(--naama-primary);
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    background-color: var(--naama-primary-hover);
+    color: #FFFFFF;
+    box-shadow: 0 2px 8px rgba(23, 109, 56, 0.25);
+}
+
+.btn-secondary {
+    background-color: #F1F5F9;
+    color: var(--naama-text-muted);
+    border: 1px solid #E2E8F0;
+}
+
+.btn-secondary:hover {
+    background-color: #E2E8F0;
+    color: var(--naama-text-dark);
+}
+
+/* ==========================================
+   Table Toolbar (Naama Badge & Rows Dropdown)
+   ========================================== */
+.table-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* Naama Mint Badge */
+.naama-stats-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--naama-mint);
+    border: 1px solid var(--naama-mint-border);
+    color: var(--naama-primary);
+    font-weight: 700;
+    font-size: 0.92rem;
+    padding: 6px 16px;
+    border-radius: 30px;
+}
+
+.naama-pill-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--naama-primary);
+    border-radius: 50%;
+}
+
+.page-size-controller {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #FFFFFF;
+    border: 1px solid var(--naama-border);
+    padding: 4px 12px;
+    border-radius: 8px;
+}
+
+.page-size-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--naama-text-muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.page-size-select {
+    height: 34px;
+    padding: 2px 8px;
+    border: 1px solid #CBD5E1;
+    border-radius: 6px;
+    font-family: var(--naama-font);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--naama-primary);
+    background-color: #FFFFFF;
+    cursor: pointer;
+    outline: none;
+}
+
+.page-size-select:focus {
+    border-color: var(--naama-primary);
+}
+
+/* ==========================================
+   Data Table (Naama Clean Table)
+   ========================================== */
+.table-responsive-card {
+    background-color: var(--naama-card-bg);
+    border: 1px solid var(--naama-border);
+    border-radius: 14px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+    overflow-x: auto;
+    margin-bottom: 28px;
+}
+
+.plants-data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    text-align: right;
+    min-width: 950px;
+}
+
+.plants-data-table thead {
+    background-color: var(--naama-primary);
+    color: #FFFFFF;
+}
+
+.plants-data-table th {
+    font-weight: 700;
+    padding: 14px 14px;
+    white-space: nowrap;
+    font-size: 0.92rem;
+    border: none;
+}
+
+.plants-data-table tbody tr {
+    border-bottom: 1px solid var(--naama-border-light);
+    transition: background-color 0.15s ease;
+}
+
+.plants-data-table tbody tr:hover {
+    background-color: #F8FDF9;
+}
+
+.plants-data-table td {
+    padding: 12px 14px;
+    vertical-align: middle;
+    color: var(--naama-text-main);
+}
+
+.barcode-text {
+    color: var(--naama-text-dark);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+.badge-code {
+    background-color: var(--naama-mint);
+    border: 1px solid var(--naama-mint-border);
+    color: var(--naama-primary);
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 6px;
+    display: inline-block;
+    transition: all 0.2s;
+}
+
+.badge-link {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.badge-link:hover {
+    background-color: var(--naama-primary);
+    color: #FFFFFF;
+    box-shadow: 0 2px 6px rgba(23, 109, 56, 0.3);
+}
+
+.latin-name {
+    font-style: italic;
+    font-weight: 600;
+    color: var(--naama-text-dark);
+}
+
+.latin-name-highlight {
+    font-style: italic;
+    font-weight: 800;
+    color: var(--naama-primary);
+    font-size: 1.05rem;
+}
+
+.date-col {
+    direction: ltr;
+    text-align: right;
+    font-size: 0.85rem;
+    color: var(--naama-text-muted);
+}
+
+.btn-table-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 14px;
+    background-color: var(--naama-mint);
+    color: var(--naama-primary);
+    border: 1px solid var(--naama-mint-border);
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+}
+
+.btn-table-action:hover {
+    background-color: var(--naama-primary);
+    color: #FFFFFF;
+}
+
+/* ==========================================
+   Pagination (Naama Style)
+   ========================================== */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #FFFFFF;
+    padding: 6px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--naama-border);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+.page-link {
+    text-decoration: none;
+    color: var(--naama-primary);
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background-color: var(--naama-mint);
+    border: 1px solid var(--naama-mint-border);
+    transition: all 0.2s;
+}
+
+.page-link:hover {
+    background-color: var(--naama-primary);
+    color: #FFFFFF;
+}
+
+.page-indicator {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--naama-text-muted);
+    padding: 0 6px;
+}
+
+/* ==========================================
+   Detail Page Styles
+   ========================================== */
+.detail-container {
+    background-color: var(--naama-card-bg);
+    border: 1px solid var(--naama-border);
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+    margin-bottom: 40px;
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: flex-start;
+}
+
+.specimen-card {
+    background-color: #F8FAFC;
+    border: 1px solid var(--naama-border);
+    border-radius: 12px;
+    padding: 22px;
+}
+
+.specimen-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--naama-primary);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 2px solid var(--naama-border);
+    padding-bottom: 10px;
+}
+
+.specimen-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.specimen-table tr {
+    border-bottom: 1px solid #EDF2F7;
+}
+
+.specimen-table tr:last-child {
+    border-bottom: none;
+}
+
+.specimen-table th {
+    color: var(--naama-primary);
+    font-weight: 700;
+    padding: 10px 6px;
+    text-align: right;
+    width: 36%;
+    font-size: 0.92rem;
+    vertical-align: top;
+}
+
+.specimen-table th i {
+    font-size: 0.85rem;
+}
+
+.specimen-table td {
+    padding: 10px 6px;
+    color: var(--naama-text-dark);
+    font-size: 0.92rem;
+    text-align: right;
+}
+
+/* ==========================================
+   Interactive Herbarium Specimen Viewer
+   ========================================== */
+.viewer-card {
+    background-color: #FFFFFF;
+    border: 1px solid var(--naama-border);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.viewer-card:fullscreen {
+    background-color: #1A1D20;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.viewer-card:-webkit-full-screen {
+    background-color: #1A1D20;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.viewer-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background-color: #F8FAFC;
+    border-bottom: 1px solid var(--naama-border);
+    flex-wrap: wrap;
+    user-select: none;
+}
+
+.viewer-card:fullscreen .viewer-toolbar {
+    background-color: #262B30;
+    border-bottom-color: #3B424A;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.toolbar-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.toolbar-divider {
+    width: 1px;
+    height: 24px;
+    background-color: var(--naama-border);
+    margin: 0 4px;
+}
+
+.viewer-card:fullscreen .toolbar-divider {
+    background-color: #4A5568;
+}
+
+.toolbar-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    border: 1px solid var(--naama-border);
+    background-color: #FFFFFF;
+    color: var(--naama-text-main);
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.toolbar-btn:hover {
+    background-color: var(--naama-mint);
+    border-color: var(--naama-mint-border);
+    color: var(--naama-primary);
+    transform: translateY(-1px);
+}
+
+.toolbar-btn:active {
+    transform: translateY(0);
+}
+
+.viewer-card:fullscreen .toolbar-btn {
+    background-color: #32383E;
+    border-color: #4A5568;
+    color: #E2E8F0;
+}
+
+.viewer-card:fullscreen .toolbar-btn:hover {
+    background-color: var(--naama-primary);
+    border-color: var(--naama-primary);
+    color: #FFFFFF;
+}
+
+.zoom-level-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 54px;
+    height: 34px;
+    padding: 0 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--naama-primary);
+    background-color: var(--naama-mint);
+    border: 1px solid var(--naama-mint-border);
+    border-radius: 6px;
+    user-select: none;
+}
+
+.viewer-card:fullscreen .zoom-level-badge {
+    background-color: #176D38;
+    border-color: #176D38;
+    color: #FFFFFF;
+}
+
+/* Image Viewport in Detail */
+.main-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 520px;
+    background-color: #F1F5F9;
+    background-image: 
+        linear-gradient(45deg, #E2E8F0 25%, transparent 25%), 
+        linear-gradient(-45deg, #E2E8F0 25%, transparent 25%), 
+        linear-gradient(45deg, transparent 75%, #E2E8F0 75%), 
+        linear-gradient(-45deg, transparent 75%, #E2E8F0 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: grab;
+    user-select: none;
+}
+
+.viewer-card:fullscreen .main-image-wrapper {
+    flex: 1;
+    height: 100%;
+    background-color: #111315;
+    background-image: none;
+}
+
+.main-specimen-img {
+    max-width: 95%;
+    max-height: 95%;
+    object-fit: contain;
+    transition: transform 0.08s ease-out, filter 0.2s ease;
+    will-change: transform;
+    pointer-events: none;
+}
+
+.viewer-hint {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background-color: rgba(15, 23, 42, 0.75);
+    color: #FFFFFF;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+    pointer-events: none;
+    opacity: 0.85;
+    transition: opacity 0.3s;
+}
+
+.main-image-wrapper:hover .viewer-hint {
+    opacity: 0.3;
+}
+
+.thumbnails-strip-title {
+    font-weight: 700;
+    color: var(--naama-primary);
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.thumbnails-strip {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+}
+
+.thumb-item {
+    position: relative;
+    width: 76px;
+    height: 76px;
+    border-radius: 8px;
+    border: 2px solid var(--naama-border);
+    overflow: hidden;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+
+.thumb-item:hover,
+.thumb-item.active {
+    border-color: var(--naama-primary);
+    box-shadow: 0 0 0 2px var(--naama-mint-border);
+}
+
+.thumb-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thumb-badge {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    background: rgba(0, 0, 0, 0.65);
+    color: #FFFFFF;
+    font-size: 0.7rem;
+    padding: 1px 4px;
+    border-radius: 3px;
+}
+
+.placeholder-avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #94A3B8;
+    text-align: center;
+    padding: 30px;
+}
+
+.placeholder-avatar i {
+    font-size: 3rem;
+    color: #CBD5E1;
+}
+
+/* ==========================================
+   Naama Footer
+   ========================================== */
+.naama-footer {
+    background-color: #FFFFFF;
+    border-top: 1px solid var(--naama-border);
+    padding: 24px 0;
+    margin-top: auto;
+}
+
+.footer-container {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.footer-brand-title {
+    font-weight: 800;
+    color: var(--naama-primary);
+    font-size: 1rem;
+}
+
+.footer-sub {
+    font-size: 0.85rem;
+    color: var(--naama-text-muted);
+}
+
+.footer-naama-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: var(--naama-text-muted);
+    background-color: #F1F5F9;
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+.footer-naama-badge i {
+    color: var(--naama-primary);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .filter-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .naama-brand-separator {
+        display: none;
+    }
+    .naama-brand-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+    .filter-grid {
+        grid-template-columns: 1fr;
+    }
+    .center-main-title {
+        font-size: 1.25rem;
+    }
+}
